@@ -11,7 +11,7 @@ It listens to Push, Pull Request, and Merge events, stores clean data in MongoDB
 - Tools: GitHub Webhooks, ngrok
 
 ## Application Flow
-1. GitHub triggers events (Push, Pull Request, Merge).
+1. GitHub triggers events (Push, Pull Request, Merge)
 2. Webhook sends event data to Flask endpoint.
 3. Flask extracts required fields and stores them in MongoDB.
 4. UI polls the backend every 15 seconds and displays the latest activity.
