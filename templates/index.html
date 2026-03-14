@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>GitHub Activity</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webhook Receiver Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h2>GitHub Repository Activity</h2>
-  <ul id="events"></ul>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-title">
+          <i class="fas fa-webhook"></i>
+          <h1>Webhook Dashboard</h1>
+        </div>
+        <div class="header-stats">
+          <div class="stat-card">
+            <span class="stat-label">Total Events</span>
+            <span class="stat-value" id="totalCount">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Status</span>
+            <span class="stat-value" id="status">
+              <span class="status-indicator online"></span> Live
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="events-container">
+        <div class="section-header">
+          <h2>Recent Activity</h2>
+          <button class="btn-refresh">
+            <i class="fas fa-sync-alt"></i> Refresh
+          </button>
+        </div>
+
+        <div id="events" class="events-list">
+          <div class="empty-state">
+            <i class="fas fa-inbox"></i>
+            <p>No events yet. Waiting for webhooks...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
   <script src="/static/script.js"></script>
 </body>
